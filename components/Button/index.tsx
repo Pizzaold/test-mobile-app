@@ -1,5 +1,5 @@
 import { TouchableOpacity, Text } from "react-native";
-import styles from "./styel";
+import styles from "./style";
 
 const Button = ({ title, onPress }: { title: string, onPress: () => void }) => {
 

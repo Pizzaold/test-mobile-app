@@ -1,6 +1,6 @@
 import { Text, View, Image, TouchableOpacity } from "react-native";
 import styles from "./style";
-import Button from "./components/Button";
+import Button from "../components/Button";
 export default function SplashScreen() {
   return (
     <View style={styles.container}>
