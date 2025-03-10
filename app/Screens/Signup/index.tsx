@@ -7,6 +7,7 @@ import Seperator from "@/components/Separator";
 import { router } from "expo-router";
 import { useState } from "react";
 import Button from "@/components/Button";
+import GoogleLogin from "@/components/GoogleLogin";
 
 const Signup = () => {
   const [checked, setChecked] = useState(false)
@@ -27,6 +28,7 @@ const Signup = () => {
       </View>
       <Button style={styles.button} title="Sign In" onPress={() => {}} />
       <Seperator text='Or sign up with' />
+      <GoogleLogin />
     </View>
   );
 };
