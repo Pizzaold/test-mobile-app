@@ -1,12 +1,13 @@
 import { Text, View, Image, TouchableOpacity } from "react-native";
 import styles from "./style";
 import Button from "../components/Button";
-import { router } from "expo-router";
+import { NavigationProp, useNavigation } from "@react-navigation/native";
 
 export default function SplashScreen() {
+  const navigation = useNavigation<NavigationProp<any>>();
 
   const handleSignUp = () => {
-    router.push({pathname: "/Screens/Signup"});
+    navigation.navigate("Screens/Signup/index");
   };
 
   return (
