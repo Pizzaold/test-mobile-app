@@ -1,17 +1,17 @@
 import { Text, View, Image, TouchableOpacity } from "react-native";
 import styles from "./style";
 import Button from "../components/Button";
-import { NavigationProp, useNavigation } from "@react-navigation/native";
+import { NavigationContainer } from "@react-navigation/native";
+import Layout from "./_layout";
 
-export default function SplashScreen() {
-  const navigation = useNavigation<NavigationProp<any>>();
+export function SplashScreen() {
 
   const handleSignUp = () => {
-    navigation.navigate("Screens/Signup/index");
+    
   };
 
   const handleSignIn = () => {
-    navigation.navigate("Screens/Signin/index")
+
   }
 
   return (
@@ -33,4 +33,12 @@ export default function SplashScreen() {
       </TouchableOpacity>
     </View>
   );
+}
+
+export default function App() {
+  return (
+    <NavigationContainer>
+      <Layout />
+    </NavigationContainer>
+  )
 }

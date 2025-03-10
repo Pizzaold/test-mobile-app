@@ -3,14 +3,13 @@ import styles from "./style";
 import Header from "@/components/Header";
 import Input from "@/components/Input";
 import Seperator from "@/components/Separator";
-import { router } from "expo-router";
 import Button from "@/components/Button";
 import GoogleLogin from "@/components/GoogleLogin";
 
 const Signin = () => {
   
   const handleBackPress = () => {
-    router.back();
+
   };
 
   return (
