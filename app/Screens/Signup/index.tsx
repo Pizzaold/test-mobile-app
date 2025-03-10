@@ -3,6 +3,7 @@ import styles from "./style";
 import Header from "@/components/Header";
 import Input from "@/components/Input";
 import Checkbox from "@/components/Checkbox"
+import Seperator from "@/components/Separator";
 import { router } from "expo-router";
 import { useState } from "react";
 import Button from "@/components/Button";
@@ -25,6 +26,7 @@ const Signup = () => {
         <Text style={styles.agreeText}>I agree with <Text style={styles.agreeTextBold}>Terms & Privacy</Text></Text>
       </View>
       <Button style={styles.button} title="Sign In" onPress={() => {}} />
+      <Seperator text='Or sign up with' />
     </View>
   );
 };
