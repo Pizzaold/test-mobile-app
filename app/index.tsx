@@ -10,6 +10,10 @@ export default function SplashScreen() {
     navigation.navigate("Screens/Signup/index");
   };
 
+  const handleSignIn = () => {
+    navigation.navigate("Screens/Signin/index")
+  }
+
   return (
     <View style={styles.container}>
       <Image
@@ -22,7 +26,7 @@ export default function SplashScreen() {
         <Text style={styles.title}>Here!</Text>
       </View>
 
-      <Button title="Sign In" onPress={handleSignUp} />
+      <Button title="Sign In" onPress={handleSignIn} />
 
       <TouchableOpacity onPress={handleSignUp}>
         <Text style={styles.signUpText}>Sign Up</Text>
