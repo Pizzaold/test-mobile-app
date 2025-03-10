@@ -2,15 +2,12 @@ import { View, Text } from "react-native";
 import styles from "./style";
 import Header from "@/components/Header";
 import Input from "@/components/Input";
-import Checkbox from "@/components/Checkbox"
 import Seperator from "@/components/Separator";
 import { router } from "expo-router";
-import { useState } from "react";
 import Button from "@/components/Button";
 import GoogleLogin from "@/components/GoogleLogin";
 
 const Signin = () => {
-  const [checked, setChecked] = useState(false)
   
   const handleBackPress = () => {
     router.back();
