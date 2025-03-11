@@ -1,7 +1,7 @@
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import SplashScreen from './index';
-import Signin from './Screens/Signin';
-import Signup from './Screens/Signup';
+import Signin from './Screens/auth/Signin';
+import Signup from './Screens/auth/Signup';
 import { SafeAreaView } from 'react-native';
 
 const Stack = createNativeStackNavigator();
