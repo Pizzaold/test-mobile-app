@@ -1,19 +1,19 @@
-import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import SplashScreen from '.';
+import SplashScreen from './index';
 import Signin from './Screens/Signin';
 import Signup from './Screens/Signup';
+import { SafeAreaView } from 'react-native';
 
 const Stack = createNativeStackNavigator();
 
 export default function Layout() {
   return (
-    <NavigationContainer>
+    <SafeAreaView style={{flex: 1, backgroundColor: '#fff'}}>
       <Stack.Navigator>
-        <Stack.Screen name="index" component={SplashScreen} />
-        <Stack.Screen name="Signin" component={Signin} />
-        <Stack.Screen name="Signup" component={Signup} />
+        <Stack.Screen name="index" component={SplashScreen} options={{ headerShown: false }}/>
+        <Stack.Screen name="Signin" component={Signin} options={{ headerShown: false }}/>
+        <Stack.Screen name="Signup" component={Signup} options={{ headerShown: false }}/>
       </Stack.Navigator>
-    </NavigationContainer>
+    </SafeAreaView>
   );
 }
