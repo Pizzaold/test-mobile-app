@@ -13,7 +13,7 @@ import { Ionicons } from '@expo/vector-icons';
 const Tab = createBottomTabNavigator()
 
 export default function App() {
-  const [isSignedIn, setIsSignedIn] = useState(false);
+  const [isSignedIn, setIsSignedIn] = useState(true);
   
   return isSignedIn ? <Tabs /> : <SplashScreen/>;
 }

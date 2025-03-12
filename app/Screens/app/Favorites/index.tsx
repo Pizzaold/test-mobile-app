@@ -1,10 +1,14 @@
-import { View, Text } from "react-native";
+import { View, Text, SafeAreaView } from "react-native";
 import styles from "./style";
+import Header from "@/components/Header";
 
 export default function Favorites() {
     return (
-        <View>
-            <Text>Favorites</Text>
-        </View>
+        <SafeAreaView>
+            <View style={styles.container}>
+                <Header title="Favorites" showBack={false} showSearch={true} />
+                <Text>Favorites</Text>
+            </View>
+        </SafeAreaView>
     )
 }

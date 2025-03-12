@@ -1,10 +1,15 @@
-import { View, Text } from "react-native";
+import { View, Text, SafeAreaView } from "react-native";
 import styles from "./style";
+import Header from "@/components/Header";
 
 export default function Home() {
+
     return (
-        <View>
-            <Text>Home</Text>
-        </View>
+        <SafeAreaView>
+            <View style={styles.container}>
+                <Header title="Find All You Need" showBack={false} showSearch={true} />
+                <Text>Home</Text>
+            </View>
+        </SafeAreaView>
     )
 }

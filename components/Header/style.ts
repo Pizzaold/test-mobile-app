@@ -9,7 +9,7 @@ const styles = StyleSheet.create({
     marginTop: 10,
     marginLeft: 10,
   },
-  backIcon: {
+  Icon: {
     width: 18,
     height: 18,
   },
@@ -19,6 +19,9 @@ const styles = StyleSheet.create({
     fontWeight: "500",
     paddingHorizontal: 16,
   },
+  space: {
+    width: 24,
+  }
 });
 
 export default styles;
