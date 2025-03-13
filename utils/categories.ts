@@ -1,4 +1,4 @@
-export const categories = [
+const categories = [
   {
       title: 'Popular',
       image: 'https://static8.depositphotos.com/1338574/831/i/600/depositphotos_8318731-stock-photo-gold-star.jpg'
@@ -26,6 +26,8 @@ export const categories = [
   {
       id: 5,
       title: 'Bed',
-      image: 'https://szyszkadesign.com/wp-content/uploads/2021/12/categorybeds-1-1200x1200-1.jpg'
+      image: 'https://scandinaviandesigns.com/cdn/shop/products/S13_Bolig_Walnut_Full_02.jpg?v=1715217666'
   },
 ]
+
+export default categories;
