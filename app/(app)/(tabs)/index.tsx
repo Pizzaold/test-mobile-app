@@ -1,39 +1,26 @@
-import { View, Text, SafeAreaView, Image, FlatList } from "react-native";
-import styles from "./style";
+import { View, FlatList } from "react-native";
+import { SafeAreaView } from "react-native-safe-area-context";
+import { useState } from "react";
+import styles from "./indexStyle";
 import Header from "@/components/Header";
-import categories from "@/utils/categories";
 import CategoryBox from "@/components/CategoryBox";
 import ProductHomeItem from "@/components/ProductHomeItem";
-import products from "@/utils/products";
-import { useState, useEffect } from "react";
+import { categories, products } from "@/utils/data";
 
 export default function Home() {
     const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
-    const [selectedProducts, setSelectedProducts] = useState<any[]>(products);
-    const [keyword, setKeyword] = useState<string>('');
-
-    useEffect(() => {
-        if (selectedCategory && !keyword) {
-            const updatedSelectedProducts = products.filter((product) => product?.category === Number(selectedCategory));
-            setSelectedProducts(updatedSelectedProducts);
-        } else if (selectedCategory && keyword) {
-            const updatedSelectedProducts = products.filter((product) => product?.category === Number(selectedCategory) && product?.title.toLowerCase().includes(keyword.toLowerCase()));
-            setSelectedProducts(updatedSelectedProducts);
-        } else if (!selectedCategory && keyword) {
-            const updatedSelectedProducts = products.filter((product) => product?.title.toLowerCase().includes(keyword.toLowerCase()));
-            setSelectedProducts(updatedSelectedProducts);
-        } else if (!selectedCategory && !keyword) {
-            setSelectedProducts(products);
-        } else {
-            setSelectedProducts(products);
-        }
-    }, [selectedCategory, keyword]);
+    const [selectedProducts, setSelectedProducts] = useState<string[]>([]);
+    const [keyword, setKeyword] = useState<string>("");
 
     const renderCategoriItem = (item: any, index: number) => {
+        const isSelected = selectedCategory === item.id;
         return (
-            <CategoryBox title={item.title} image={item.image}
-            onPress={() => setSelectedCategory(item.id)}
-            isSelected={selectedCategory === item.id}/>
+            <CategoryBox
+                onPress={() => setSelectedCategory(item.id)}
+                isSelected={isSelected}
+                title={item.title}
+                image={item.image}
+            />
         )
     }
 
@@ -69,4 +56,4 @@ export default function Home() {
             </View>
         </SafeAreaView>
     )
-}
+} 

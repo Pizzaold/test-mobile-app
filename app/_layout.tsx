@@ -1,19 +1,27 @@
-import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import SplashScreen from './index';
-import Signin from './Screens/auth/Signin';
-import Signup from './Screens/auth/Signup';
-import { SafeAreaView } from 'react-native';
+import { useEffect } from 'react';
+import { Slot, useSegments, useRouter } from 'expo-router';
+import { SafeAreaProvider } from 'react-native-safe-area-context';
+import { useAuth } from '../utils/auth';
 
-const Stack = createNativeStackNavigator();
+export default function RootLayout() {
+  const { isSignedIn } = useAuth();
+  const segments = useSegments();
+  const router = useRouter();
 
-export default function Layout() {
+  useEffect(() => {
+    const inAuthGroup = segments[0] === '(auth)';
+
+    if (!isSignedIn && !inAuthGroup) {
+      router.replace('/(auth)');
+    } else if (isSignedIn && inAuthGroup) {
+      router.replace('/');
+    }
+  }, [isSignedIn, segments]);
+
   return (
-    <SafeAreaView style={{flex: 1, backgroundColor: '#fff'}}>
-      <Stack.Navigator>
-        <Stack.Screen name="index" component={SplashScreen} options={{ headerShown: false }}/>
-        <Stack.Screen name="Signin" component={Signin} options={{ headerShown: false }}/>
-        <Stack.Screen name="Signup" component={Signup} options={{ headerShown: false }}/>
-      </Stack.Navigator>
-    </SafeAreaView>
+    <SafeAreaProvider>
+      <Slot />
+    </SafeAreaProvider>
   );
 }
+
