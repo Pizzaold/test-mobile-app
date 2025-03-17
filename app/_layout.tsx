@@ -1,27 +1,22 @@
-import { useEffect } from 'react';
-import { Slot, useSegments, useRouter } from 'expo-router';
-import { SafeAreaProvider } from 'react-native-safe-area-context';
-import { useAuth } from '../utils/auth';
+import { Slot, Stack } from 'expo-router';
+import { View } from 'react-native';
+import { AuthProvider } from '@/utils/auth';
 
 export default function RootLayout() {
-  const { isSignedIn } = useAuth();
-  const segments = useSegments();
-  const router = useRouter();
-
-  useEffect(() => {
-    const inAuthGroup = segments[0] === '(auth)';
-
-    if (!isSignedIn && !inAuthGroup) {
-      router.replace('/(auth)');
-    } else if (isSignedIn && inAuthGroup) {
-      router.replace('/');
-    }
-  }, [isSignedIn, segments]);
-
   return (
-    <SafeAreaProvider>
-      <Slot />
-    </SafeAreaProvider>
+    <AuthProvider>
+      <View style={{ flex: 1, backgroundColor: '#fff' }}>
+        <Stack
+          screenOptions={{
+            headerShown: false,
+            contentStyle: { backgroundColor: '#fff' }
+          }}
+        >
+          <Stack.Screen name="(auth)" />
+          <Stack.Screen name="(app)" />
+        </Stack>
+      </View>
+    </AuthProvider>
   );
 }
 

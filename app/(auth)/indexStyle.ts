@@ -2,7 +2,11 @@ import { StyleSheet } from "react-native";
 import { colors } from "@/utils/colour";
 
 const styles = StyleSheet.create({
-    container: {
+  container: {
+    flex: 1,
+    backgroundColor: '#fff',
+  },
+  innerContainer: {
         padding: 24,
         flexDirection: 'column',
         justifyContent: 'center',

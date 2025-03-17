@@ -1,5 +1,4 @@
-import { Text, View, Image } from 'react-native';
-import { SafeAreaView } from 'react-native-safe-area-context';
+import { Text, View, Image, SafeAreaView } from 'react-native';
 import styles from './indexStyle';
 import { router } from 'expo-router';
 import Button from '@/components/Button';
@@ -7,8 +6,8 @@ import { colors } from '@/utils/colour';
 
 export default function SplashScreen() {
     return (
-        <SafeAreaView>
-            <View style={styles.container}>
+        <SafeAreaView style={styles.container}>
+            <View style={styles.innerContainer}>
                 <Image source={require('@/assets/images/splash-image.png')} style={styles.image}/>
 
                 <View style={styles.titleContainer}>

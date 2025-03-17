@@ -1,5 +1,4 @@
-import { View, Text, TouchableOpacity } from "react-native";
-import { SafeAreaView } from "react-native-safe-area-context";
+import { View, Text, TouchableOpacity, SafeAreaView } from "react-native";
 import { useRouter } from "expo-router";
 import styles from "./signinStyle";
 import Header from "@/components/Header";
@@ -19,12 +18,12 @@ export default function Signin() {
 
   const handleSignIn = () => {
     signIn();
-    router.replace('/');
+    router.replace('/(app)/(tabs)');
   };
 
   return (
-    <SafeAreaView style={{flex: 1, backgroundColor: '#fff'}}>
-      <View style={styles.container}>
+    <SafeAreaView style={styles.container}>
+      <View>
         <Header title="Sign In" onBackPress={handleBackPress} />
         <Input label="Email" placeholder="some@one.com"/>
         <Input isPassword label="Password" placeholder="******"/>
