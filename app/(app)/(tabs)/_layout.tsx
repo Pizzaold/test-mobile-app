@@ -6,8 +6,8 @@ export default function TabLayout() {
   return (
     <View style={{ flex: 1, backgroundColor: '#fff' }}>
       <Tabs
-        screenOptions={({ route }) => ({
-          tabBarIcon: ({ focused, color, size }) => {
+        screenOptions={({ route }: { route: any }) => ({
+          tabBarIcon: ({ focused, color, size }: { focused: boolean, color: string, size: number }) => {
             let iconName: keyof typeof Ionicons.glyphMap = 'home-outline';
 
             if (route.name === 'index') {
@@ -53,6 +53,18 @@ export default function TabLayout() {
           }}
         />
         <Tabs.Screen
+          name="settings"
+          options={{
+            href: null,
+          }}
+        />
+        <Tabs.Screen
+          name="createListing"
+          options={{
+            href: null,
+          }}
+        />
+        <Tabs.Screen
           name="indexStyle"
           options={{
             href: null,
@@ -72,6 +84,18 @@ export default function TabLayout() {
         />
         <Tabs.Screen
           name="productsDetailsStyle"
+          options={{
+            href: null,
+          }}
+        />
+        <Tabs.Screen
+          name="settingsStyle"
+          options={{
+            href: null,
+          }}
+        />
+        <Tabs.Screen
+          name="createListingStyle"
           options={{
             href: null,
           }}
