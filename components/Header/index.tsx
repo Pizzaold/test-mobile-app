@@ -3,7 +3,7 @@ import styles from "./style";
 import { useState } from "react";
 import Input from "../Input";
 
-const Header = ({ title, onBackPress, onLogout, onSearchKeyword, keyword, showBack = true, showSearch = false, showLogout = false }: { title: string, onBackPress?: () => void, onLogout?: () => void, onSearchKeyword?: (keyword: string) => void, keyword?: string, showBack?: boolean, showSearch?: boolean, showLogout?: boolean }) => {
+const Header = ({ title, onBackPress, onLogout, onSearchKeyword, keyword, showBack, showSearch, showLogout }: { title: string, onBackPress?: () => void, onLogout?: () => void, onSearchKeyword?: (keyword: string) => void, keyword?: string, showBack?: boolean, showSearch?: boolean, showLogout?: boolean }) => {
   const [showSearchInput, setShowSearchInput] = useState(false);
 
   const onSearch = () => {

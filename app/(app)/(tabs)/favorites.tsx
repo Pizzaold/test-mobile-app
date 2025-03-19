@@ -22,7 +22,7 @@ export default function Favorites() {
 
     return (
         <SafeAreaView style={styles.container}>
-            <Header title="Favorites" showBack={false} showSearch={true} />
+            <Header title="Favorites" showBack />
             <FlatList 
                 data={products} 
                 renderItem={renderItem}
